@@ -25,7 +25,7 @@ module "my_aws_key" {
 
 module "ec2_micro" {
   source        = "../modules/ec2"
-  securitygroups = ["default"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}", "${module.sg_gitlab.sg_name}"]
+  securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}", "${module.sg_gitlab.sg_name}"]
   count         = "${var.count_micro}"
   instance_type = "t2.micro"
   name_prefix   = "micro"
@@ -39,7 +39,7 @@ output "ec2_micro_public_ip" {
 
 module "ec2_small" {
   source        = "../modules/ec2"
-  securitygroups = ["default"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}"]
+  securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}"]
   count         = "${var.count_small}"
   instance_type = "t2.small"
   name_prefix   = "small"
@@ -53,7 +53,7 @@ output "ec2_small_public_ip" {
 
 module "ec2_med" {
   source        = "../modules/ec2"
-  securitygroups = ["default"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}"]
+  securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_standard.sg_name}"]
   count         = "${var.count_med}"
   instance_type = "t2.medium"
   name_prefix   = "med"
@@ -67,7 +67,7 @@ output "ec2_med_public_ip" {
 
 module "gitlab" {
   source        = "../modules/ec2"
-  securitygroups = ["default"] #["${module.sg_ssh.sg_name}", "${module.sg_gitlab.sg_name}"]
+  securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_gitlab.sg_name}"]
   count         = "${var.count_gitlab}"
   instance_type = "t2.medium"
   name_prefix   = "gitlab"
@@ -82,7 +82,7 @@ output "gitlab_public_ip" {
 
 module "jenkins" {
   source        = "../modules/ec2"
-  securitygroups = ["default"] #["${module.sg_ssh.sg_name}", "${module.sg_jenkins.sg_name}"]
+  securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_jenkins.sg_name}"]
   count         = "${var.count_jenkins}"
   instance_type = "t2.micro"
   name_prefix   = "jenkins"

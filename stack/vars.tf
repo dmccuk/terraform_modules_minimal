@@ -17,7 +17,7 @@ variable "count_jenkins" {
 #variable "access_key" {} # replaced by aws credentials
 #variable "secret_key" {} # replaced by aws credentials
 variable "region" {
-  default = "eu-west-1"
+  default = "ap-south-1"
 }
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
@@ -25,5 +25,12 @@ variable "server_port" {
 }
 
 variable "ami" { # Ubuntu 16.04
-  default = "ami-0e219142c0bee4a6e"
+  default = "ami-00dd92d5ec4efe42f"
 }
+variable "SECURITY_GROUP_IDS" {
+  default = "sg-0a86d93792aca562b"
+}
+variable "INSTANCE_NAME" {
+  default = "DevOps Training"
+}
+
