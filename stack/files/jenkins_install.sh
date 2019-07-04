@@ -5,7 +5,7 @@ sudo echo 'deb http://pkg.jenkins.io/debian-stable binary/' | sudo tee -a /etc/a
 sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt-get update
 sudo apt install wget curl git python3-minimal ansible -yq
-sudo apt-get -y install default-jre
+sudo apt-get -y install default-jre ansible git curl wget
 sudo apt-get -y install jenkins
 sudo systemctl start jenkins
 echo " ---## Jenkins Installed ##---"
