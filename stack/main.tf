@@ -84,7 +84,7 @@ module "jenkins" {
   source        = "../modules/ec2"
   securitygroups = ["mumbai-ec2-dev-ops-training"] #["${module.sg_ssh.sg_name}", "${module.sg_jenkins.sg_name}"]
   count         = "${var.count_jenkins}"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   name_prefix   = "jenkins"
   ami           = "${var.ami}"
   provision_script = "files/jenkins_install.sh"
